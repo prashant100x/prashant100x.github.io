@@ -1,60 +1,289 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Prashant Kumar Nidhi</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prashant Kumar Nidhi | Business Analytics Portfolio</title>
+  <meta name="description" content="Business Analytics & Operations portfolio of Prashant Kumar Nidhi (Ottawa, Canada). Power BI, Excel, SQL, supply chain and banking analytics projects." />
 
-<style>
-body {
-font-family: Arial;
-background-color: #f4f6f8;
-margin: 0;
-padding: 0;
-}
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1a30;
+      --muted:#a8b3cf;
+      --text:#eef2ff;
+      --accent:#4f9cff;
+      --accent2:#22c55e;
+      --border: rgba(255,255,255,.08);
+      --shadow: 0 12px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+    }
 
-.header {
-background-color: #1F4E79;
-color: white;
-padding: 20px;
-text-align: center;
-}
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      background: radial-gradient(1200px 700px at 20% 10%, rgba(79,156,255,.18), transparent 60%),
+                  radial-gradient(1000px 650px at 80% 20%, rgba(34,197,94,.12), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
 
-.container {
-padding: 20px;
-}
+    a{color:inherit}
+    .wrap{max-width:1060px;margin:0 auto;padding:28px 18px 60px}
+    .nav{
+      display:flex;justify-content:space-between;align-items:center;gap:12px;
+      position:sticky;top:0;z-index:10;
+      padding:14px 0;
+      backdrop-filter: blur(10px);
+    }
+    .brand{
+      display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px
+    }
+    .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 0 0 6px rgba(79,156,255,.15)}
+    .nav a{ text-decoration:none; color:var(--muted); font-weight:600; }
+    .links{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end}
 
-.project {
-background: white;
-padding: 15px;
-margin: 15px;
-border-radius: 10px;
-box-shadow: 0px 0px 5px grey;
-}
+    .hero{
+      margin-top:18px;
+      padding:28px;
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-grid{display:grid;grid-template-columns: 1.3fr .7fr;gap:18px}
+    @media(max-width:900px){ .hero-grid{grid-template-columns:1fr} }
 
-a {
-text-decoration: none;
-color: #1F4E79;
-font-weight: bold;
-}
+    h1{margin:0 0 8px;font-size:34px;line-height:1.15}
+    .subtitle{color:var(--muted);margin:0 0 16px;font-size:16px}
+    .pillrow{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 0}
+    .pill{
+      padding:8px 10px;border-radius:999px;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--border);
+      color: var(--muted);
+      font-size:13px;font-weight:600;
+    }
 
-</style>
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 14px;border-radius:12px;text-decoration:none;font-weight:800;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.06);
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(79,156,255,.95), rgba(79,156,255,.65));
+      border-color: rgba(79,156,255,.55);
+      color:#071021;
+    }
+    .btn.secondary{
+      background: rgba(34,197,94,.14);
+      border-color: rgba(34,197,94,.35);
+    }
+
+    .card{
+      padding:18px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.04);
+      border:1px solid var(--border);
+      box-shadow: 0 10px 24px rgba(0,0,0,.22);
+    }
+    .mini h3{margin:0 0 8px;font-size:14px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.12em}
+    .mini p{margin:0;color:var(--text);font-weight:700}
+    .mini .small{margin-top:8px;color:var(--muted);font-weight:600;font-size:13px}
+
+    .section{margin-top:22px}
+    .section h2{margin:0 0 10px;font-size:18px;letter-spacing:.2px}
+    .grid{display:grid;grid-template-columns: 1fr 1fr;gap:14px}
+    @media(max-width:900px){ .grid{grid-template-columns:1fr} }
+
+    .project-title{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+    .tag{
+      font-size:12px;font-weight:900;
+      padding:7px 10px;border-radius:999px;
+      background: rgba(79,156,255,.14);
+      border:1px solid rgba(79,156,255,.28);
+      color: #cfe4ff;
+      white-space:nowrap;
+    }
+    .card h3{margin:0 0 6px}
+    .muted{color:var(--muted)}
+    ul{margin:10px 0 0 18px;color:var(--muted)}
+    li{margin:6px 0}
+
+    .project-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .chip{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 12px;border-radius:12px;
+      text-decoration:none;font-weight:800;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+    }
+    .chip:hover{transform:translateY(-1px)}
+    .footer{
+      margin-top:26px;
+      padding-top:18px;
+      color:var(--muted);
+      font-size:13px;
+      border-top:1px solid var(--border);
+      display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
+    }
+    code{background:rgba(255,255,255,.06);padding:3px 6px;border-radius:8px;border:1px solid var(--border)}
+  </style>
 </head>
 
 <body>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand"><span class="dot"></span> Prashant Portfolio</div>
+      <div class="links">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
 
-<div class="header">
-<h1>Prashant Kumar Nidhi</h1>
-<p>Business Analytics Portfolio | Ottawa, Canada</p>
-</div>
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <h1>Prashant Kumar Nidhi</h1>
+          <p class="subtitle">
+            Business Operations / Business Analytics • Supply Chain • Banking Analytics <br/>
+            Ottawa, ON • Open to relocation (GTA)
+          </p>
 
-<div class="container">
+          <div class="cta">
+            <!-- Replace LinkedIn URL when ready -->
+            <a class="btn primary" href="https://github.com/prashant100x" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn secondary" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn" href="mailto:prashant100x@gmail.com">Email</a>
+          </div>
 
-<div class="project">
-<h2>Retail Supply Chain Decision Dashboard</h2>
-<p>Power BI dashboard to estimate revenue risk caused by inventory shortages in Canadian grocery retail stores.</p>
-<a href="https://github.com/prashant100x/Retail-Supply-Chain-Decision-Dashboard">View Project on GitHub</a>
-</div>
+          <div class="pillrow">
+            <span class="pill">Power BI</span>
+            <span class="pill">Advanced Excel</span>
+            <span class="pill">SQL</span>
+            <span class="pill">Inventory & Operations</span>
+            <span class="pill">Process Optimization</span>
+          </div>
+        </div>
 
-</div>
+        <div class="card mini">
+          <h3>Profile Snapshot</h3>
+          <p>Results-driven Business Operations Analyst focused on inventory management, data integrity, and process improvement.</p>
+          <div class="small">
+            Highlight: dashboards + KPI tracking, operational analysis, stakeholder communication.
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section id="projects" class="section">
+      <h2>Featured Projects</h2>
+
+      <div class="grid">
+        <div class="card">
+          <div class="project-title">
+            <div>
+              <h3>Retail Supply Chain Decision Dashboard</h3>
+              <div class="muted">Decision support: revenue risk + inventory availability insights</div>
+            </div>
+            <div class="tag">Supply Chain</div>
+          </div>
+
+          <ul>
+            <li>Estimated revenue exposure from inventory shortages using pricing + availability signals</li>
+            <li>Brand/vendor contribution analysis to prioritize replenishment actions</li>
+            <li>Price vs risk view to highlight high-impact items</li>
+          </ul>
+
+          <div class="project-links">
+            <a class="chip" href="https://github.com/prashant100x/Retail-Supply-Chain-Decision-Dashboard" target="_blank" rel="noreferrer">View Repo</a>
+          </div>
+
+          <p class="muted" style="margin-top:12px;">
+            Tip: Add a screenshot in your repo and it will act like a project “demo”.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="project-title">
+            <div>
+              <h3>Next Project Slot: Banking Analytics</h3>
+              <div class="muted">Behavior-based customer risk + decision rules</div>
+            </div>
+            <div class="tag" style="background:rgba(34,197,94,.14);border-color:rgba(34,197,94,.28);color:#c9f7d8;">Banking</div>
+          </div>
+          <ul>
+            <li>Customer segmentation (risk bands) + explainable KPIs</li>
+            <li>Simple approval / review / reject decision panel</li>
+            <li>Designed to match analyst interview questions</li>
+          </ul>
+          <div class="project-links">
+            <span class="chip" style="opacity:.7">Coming Soon</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Analytics & Operations</h3>
+          <ul>
+            <li>Inventory Management, Data Integrity, Performance Analysis</li>
+            <li>Process Optimization, Cost Reduction, KPI Monitoring</li>
+            <li>Stakeholder Communication & Change Support</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Tools</h3>
+          <ul>
+            <li>Power BI (DAX), Excel (Pivots, Lookups, Advanced formulas)</li>
+            <li>SQL (analysis, querying)</li>
+            <li>Tableau (basic), reporting & dashboarding</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <h2>Experience Highlight</h2>
+      <div class="card">
+        <h3>Infinite IT Solution — Business Analyst (Sep 2022 – Jul 2024)</h3>
+        <ul>
+          <li>Inventory data audits and optimization initiatives; reduced discrepancies (as documented in resume)</li>
+          <li>Operational performance analysis using SQL + Excel; improved workflow efficiency</li>
+          <li>Built dashboards/tracking systems for real-time KPI monitoring</li>
+        </ul>
+        <p class="muted">Location: Nepal • Now based in Ottawa, Canada</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="card">
+        <p><b>Email:</b> <a href="mailto:prashant100x@gmail.com">prashant100x@gmail.com</a></p>
+        <p><b>Phone:</b> +1 (343) 558-0896</p>
+        <p><b>Location:</b> Ottawa, ON • Open to GTA relocation</p>
+        <p class="muted">Replace the LinkedIn button URL when you’re ready.</p>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div>© <span id="y"></span> Prashant Kumar Nidhi</div>
+      <div>Built on <code>GitHub Pages</code></div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
