@@ -1,288 +1,512 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Prashant Kumar Nidhi | Business Analytics Portfolio</title>
-  <meta name="description" content="Business Analytics & Operations portfolio of Prashant Kumar Nidhi (Ottawa, Canada). Power BI, Excel, SQL, supply chain and banking analytics projects." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Prashant Kumar Nidhi | Business Analyst Portfolio</title>
+  <meta name="description" content="Business Analyst portfolio — dashboards, SQL insights, KPI reporting, and stakeholder-ready analytics." />
 
   <style>
     :root{
       --bg:#0b1220;
-      --card:#0f1a30;
-      --muted:#a8b3cf;
-      --text:#eef2ff;
-      --accent:#4f9cff;
-      --accent2:#22c55e;
-      --border: rgba(255,255,255,.08);
-      --shadow: 0 12px 30px rgba(0,0,0,.35);
-      --radius: 16px;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.09);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --border: rgba(255,255,255,.12);
+      --accent: #35d3ff;
+      --accent2:#7c5cff;
+      --shadow: 0 18px 50px rgba(0,0,0,.35);
+      --radius: 18px;
     }
 
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
-      background: radial-gradient(1200px 700px at 20% 10%, rgba(79,156,255,.18), transparent 60%),
-                  radial-gradient(1000px 650px at 80% 20%, rgba(34,197,94,.12), transparent 55%),
-                  var(--bg);
-      color:var(--text);
-      line-height:1.55;
-    }
-
-    a{color:inherit}
-    .wrap{max-width:1060px;margin:0 auto;padding:28px 18px 60px}
-    .nav{
-      display:flex;justify-content:space-between;align-items:center;gap:12px;
-      position:sticky;top:0;z-index:10;
-      padding:14px 0;
-      backdrop-filter: blur(10px);
-    }
-    .brand{
-      display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px
-    }
-    .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 0 0 6px rgba(79,156,255,.15)}
-    .nav a{ text-decoration:none; color:var(--muted); font-weight:600; }
-    .links{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end}
-
-    .hero{
-      margin-top:18px;
-      padding:28px;
-      border:1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .hero-grid{display:grid;grid-template-columns: 1.3fr .7fr;gap:18px}
-    @media(max-width:900px){ .hero-grid{grid-template-columns:1fr} }
-
-    h1{margin:0 0 8px;font-size:34px;line-height:1.15}
-    .subtitle{color:var(--muted);margin:0 0 16px;font-size:16px}
-    .pillrow{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 0}
-    .pill{
-      padding:8px 10px;border-radius:999px;
-      background: rgba(255,255,255,.06);
-      border:1px solid var(--border);
-      color: var(--muted);
-      font-size:13px;font-weight:600;
-    }
-
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:12px 14px;border-radius:12px;text-decoration:none;font-weight:800;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.06);
-    }
-    .btn.primary{
-      background: linear-gradient(135deg, rgba(79,156,255,.95), rgba(79,156,255,.65));
-      border-color: rgba(79,156,255,.55);
-      color:#071021;
-    }
-    .btn.secondary{
-      background: rgba(34,197,94,.14);
-      border-color: rgba(34,197,94,.35);
-    }
-
-    .card{
-      padding:18px;
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.04);
-      border:1px solid var(--border);
-      box-shadow: 0 10px 24px rgba(0,0,0,.22);
-    }
-    .mini h3{margin:0 0 8px;font-size:14px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.12em}
-    .mini p{margin:0;color:var(--text);font-weight:700}
-    .mini .small{margin-top:8px;color:var(--muted);font-weight:600;font-size:13px}
-
-    .section{margin-top:22px}
-    .section h2{margin:0 0 10px;font-size:18px;letter-spacing:.2px}
-    .grid{display:grid;grid-template-columns: 1fr 1fr;gap:14px}
-    @media(max-width:900px){ .grid{grid-template-columns:1fr} }
-
-    .project-title{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
-    .tag{
-      font-size:12px;font-weight:900;
-      padding:7px 10px;border-radius:999px;
-      background: rgba(79,156,255,.14);
-      border:1px solid rgba(79,156,255,.28);
-      color: #cfe4ff;
-      white-space:nowrap;
-    }
-    .card h3{margin:0 0 6px}
-    .muted{color:var(--muted)}
-    ul{margin:10px 0 0 18px;color:var(--muted)}
-    li{margin:6px 0}
-
-    .project-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    .chip{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:10px 12px;border-radius:12px;
-      text-decoration:none;font-weight:800;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.05);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:
+        radial-gradient(1100px 650px at 10% 10%, rgba(53,211,255,.18), transparent 55%),
+        radial-gradient(900px 500px at 85% 18%, rgba(124,92,255,.16), transparent 55%),
+        var(--bg);
       color: var(--text);
     }
-    .chip:hover{transform:translateY(-1px)}
-    .footer{
-      margin-top:26px;
-      padding-top:18px;
-      color:var(--muted);
-      font-size:13px;
-      border-top:1px solid var(--border);
-      display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
+    a{color:inherit}
+    .container{width:min(1120px, calc(100% - 40px)); margin:0 auto; padding: 100px 0 60px;}
+    .topbar{
+      position:fixed; inset:0 0 auto 0; z-index:50;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 20px;
+      border-bottom:1px solid var(--border);
+      background: rgba(0,0,0,.18);
+      backdrop-filter: blur(12px);
     }
-    code{background:rgba(255,255,255,.06);padding:3px 6px;border-radius:8px;border:1px solid var(--border)}
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      text-decoration:none; font-weight:900; letter-spacing:.2px;
+    }
+    .brandMark{
+      width:14px;height:14px;border-radius:4px;
+      background: linear-gradient(135deg, var(--accent), rgba(255,255,255,.15));
+      box-shadow: 0 0 0 3px rgba(255,255,255,.06);
+    }
+    .nav{display:flex; gap:18px; align-items:center;}
+    .nav a{
+      text-decoration:none; color:var(--muted);
+      font-weight:700; font-size:14px;
+      padding:8px 10px; border-radius:12px;
+    }
+    .nav a:hover{background:var(--panel); color:var(--text)}
+    .actions{display:flex; gap:10px; align-items:center;}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px; border-radius:14px;
+      text-decoration:none; font-weight:900;
+      border:1px solid transparent;
+      background: linear-gradient(135deg, var(--accent), rgba(255,255,255,.16));
+      color:#071018;
+      box-shadow: var(--shadow);
+      white-space: nowrap;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .btn.ghost{
+      background: transparent; color: var(--text);
+      border:1px solid var(--border); box-shadow:none;
+    }
+    .btn.small{padding:8px 12px; border-radius:12px; box-shadow:none}
+
+    .hero{
+      display:grid; grid-template-columns: 1.35fr .65fr; gap:22px;
+      align-items:start; padding-top: 8px;
+    }
+    .eyebrow{
+      display:inline-block;
+      font-weight:900; letter-spacing:.9px; text-transform:uppercase;
+      font-size:12px; color:var(--muted);
+      background: var(--panel); border: 1px solid var(--border);
+      padding:8px 10px; border-radius:999px;
+    }
+    h1{margin:14px 0 10px; font-size:44px; line-height:1.08}
+    h2{margin:0 0 6px; font-size:28px}
+    h3{margin:0 0 8px; font-size:18px}
+    .accent{color: var(--accent)}
+    .subhead{margin:0 0 16px; color:var(--muted); font-size:16px; line-height:1.65}
+    .heroCtas{display:flex; gap:10px; flex-wrap:wrap; margin-top: 10px;}
+    .mini{display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top: 14px; color:var(--muted); font-weight:700}
+    .dot{width:5px;height:5px;border-radius:999px;background:var(--border); display:inline-block}
+
+    .kpis{
+      display:grid; grid-template-columns: repeat(3, 1fr); gap:10px;
+      margin: 14px 0 18px;
+    }
+    .kpi{
+      padding:12px; border-radius: 16px;
+      border:1px solid var(--border);
+      background: var(--panel);
+    }
+    .kpiNum{font-weight:1000}
+    .kpiLabel{margin-top:6px; font-size:12px; color:var(--muted); line-height:1.35}
+
+    .card{
+      border-radius: var(--radius);
+      border:1px solid var(--border);
+      background: var(--panel);
+      padding:18px;
+    }
+    .profileCard{position: sticky; top: 92px}
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top: 12px;}
+    .chip{
+      padding:8px 10px; border-radius:999px;
+      border:1px solid var(--border);
+      background: var(--panel2);
+      font-weight:900; font-size:12px;
+    }
+    .callout{
+      margin-top:12px;
+      padding:12px; border-radius: 14px;
+      border:1px solid var(--border);
+      background: linear-gradient(135deg, rgba(53,211,255,.14), rgba(255,255,255,.05));
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .section{padding:38px 0}
+    .sectionHead{margin-bottom:16px}
+    .muted{color:var(--muted)}
+    .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
+    .grid2{display:grid; grid-template-columns: repeat(2, 1fr); gap:14px}
+    ul{margin:10px 0 0; padding-left: 18px; color: var(--muted); line-height:1.7}
+    .badgeRow{display:flex; flex-wrap:wrap; gap:10px; margin-top: 14px}
+    .badge{
+      padding:8px 10px; border-radius:999px;
+      border:1px solid var(--border);
+      background: var(--panel2);
+      font-weight:900; font-size:12px;
+    }
+
+    .timeline{display:flex; flex-direction:column; gap:12px}
+    .tItem{display:grid; grid-template-columns: 150px 1fr; gap:14px; align-items:stretch}
+    .tDate{
+      padding:14px; border-radius:16px;
+      border:1px solid var(--border);
+      background: var(--panel2);
+      font-weight:1000;
+    }
+    .tCard{border-radius:16px; border:1px solid var(--border); background: var(--panel); padding:14px}
+
+    .tagRow{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px}
+    .tag{
+      padding:6px 10px; border-radius:999px;
+      border:1px solid var(--border);
+      background: transparent;
+      font-weight:1000; font-size:12px; color:var(--muted)
+    }
+    .cardActions{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+
+    .projects{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
+    .pCard{border-radius: var(--radius); border:1px solid var(--border); background: var(--panel); overflow:hidden}
+    .pMedia{
+      height:110px; display:flex; align-items:center; justify-content:center;
+      font-size:34px;
+      background: linear-gradient(135deg, rgba(124,92,255,.16), rgba(255,255,255,.04));
+      border-bottom:1px solid var(--border);
+    }
+    .pBody{padding:16px}
+    .pillRow{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .pill{
+      padding:6px 10px; border-radius:999px;
+      border:1px solid var(--border);
+      font-weight:1000; font-size:12px; color:var(--muted)
+    }
+
+    .infoRow{display:flex; justify-content:space-between; gap:16px; padding:10px 0; border-bottom:1px solid var(--border)}
+    .infoRow:last-child{border-bottom:none}
+
+    .footer{
+      margin-top:26px; padding-top:20px;
+      border-top:1px solid var(--border);
+      color:var(--muted);
+      font-weight:700;
+    }
+
+    @media (max-width: 980px){
+      .nav{display:none}
+      .hero{grid-template-columns: 1fr}
+      .profileCard{position:relative; top:auto}
+      .kpis{grid-template-columns:1fr}
+      .grid3,.grid2,.projects{grid-template-columns:1fr}
+      .tItem{grid-template-columns:1fr}
+      h1{font-size:36px}
+    }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="nav">
-      <div class="brand"><span class="dot"></span> Prashant Portfolio</div>
-      <div class="links">
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
+  <!-- Top bar -->
+  <header class="topbar">
+    <a class="brand" href="#top">
+      <span class="brandMark"></span>
+      <span>Prashant</span>
+    </a>
 
+    <nav class="nav" aria-label="Primary">
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#case-studies">Case Studies</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="actions">
+      <!-- ✅ Your LinkedIn (added) -->
+      <a class="btn ghost" href="https://www.linkedin.com/in/prashant-kumar-nidhi-3b38ab2b7/" target="_blank" rel="noreferrer">LinkedIn</a>
+
+      <!-- ✅ Optional GitHub (put your link when ready) -->
+      <a class="btn ghost" href="#" target="_blank" rel="noreferrer">GitHub</a>
+
+      <!-- ✅ Resume: keep this file in same folder as index.html -->
+      <a class="btn" href="Prashant Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <!-- HERO -->
     <section class="hero">
-      <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Business Analyst • Dashboards • Insights</span>
+        <h1>
+          Hi, I’m <span class="accent">Prashant Kumar Nidhi</span>.<br />
+          I transform data into decisions.
+        </h1>
+        <p class="subhead">
+          Results-driven Business Operations Analyst with expertise in inventory management, data integrity, and process optimization.
+          Skilled in analyzing performance data to drive operational excellence, cost savings, and profitability. :contentReference[oaicite:0]{index=0}
+        </p>
+
+        <div class="kpis">
+          <div class="kpi">
+            <div class="kpiNum">KPI Dashboards</div>
+            <div class="kpiLabel">Power BI + Excel tracking • Real-time monitoring</div>
+          </div>
+          <div class="kpi">
+            <div class="kpiNum">SQL Analysis</div>
+            <div class="kpiLabel">Operational insights • inefficiencies • cost saving</div>
+          </div>
+          <div class="kpi">
+            <div class="kpiNum">Process Optimization</div>
+            <div class="kpiLabel">Change management • playbooks • adoption</div>
+          </div>
+        </div>
+
+        <div class="heroCtas">
+          <a class="btn" href="#case-studies">View Case Studies</a>
+          <a class="btn ghost" href="#contact">Let’s Connect</a>
+        </div>
+
+        <div class="mini">
+          <span>Ottawa, Canada</span> <span class="dot"></span>
+          <a href="mailto:Prashant100x@gmail.com">Prashant100x@gmail.com</a> <span class="dot"></span>
+          <a href="tel:+13435580896">+1 343 558 0896</a>
+        </div>
+      </div>
+
+      <!-- ✅ DP picture removed (no image) -->
+      <aside class="card profileCard">
         <div>
-          <h1>Prashant Kumar Nidhi</h1>
-          <p class="subtitle">
-            Business Operations / Business Analytics • Supply Chain • Banking Analytics <br/>
-            Ottawa, ON • Open to relocation (GTA)
-          </p>
-
-          <div class="cta">
-            <!-- Replace LinkedIn URL when ready -->
-            <a class="btn primary" href="https://github.com/prashant100x" target="_blank" rel="noreferrer">GitHub</a>
-            <a class="btn secondary" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a class="btn" href="mailto:prashant100x@gmail.com">Email</a>
-          </div>
-
-          <div class="pillrow">
-            <span class="pill">Power BI</span>
-            <span class="pill">Advanced Excel</span>
-            <span class="pill">SQL</span>
-            <span class="pill">Inventory & Operations</span>
-            <span class="pill">Process Optimization</span>
+          <h3 style="margin:0 0 6px">Business Analyst</h3>
+          <div class="muted" style="line-height:1.6">
+            Inventory & operations analytics • KPI dashboards • Data integrity • Stakeholder communication
           </div>
         </div>
 
-        <div class="card mini">
-          <h3>Profile Snapshot</h3>
-          <p>Results-driven Business Operations Analyst focused on inventory management, data integrity, and process improvement.</p>
-          <div class="small">
-            Highlight: dashboards + KPI tracking, operational analysis, stakeholder communication.
-          </div>
+        <div class="chips">
+          <span class="chip">Power BI</span>
+          <span class="chip">Excel (Advanced)</span>
+          <span class="chip">SQL</span>
+          <span class="chip">Tableau</span>
+          <span class="chip">Process Optimization</span>
+          <span class="chip">Change Management</span>
         </div>
-      </div>
+
+        <div class="callout">
+          <b>Highlights:</b> reduced inventory discrepancies by <b>22%</b>, improved workflow efficiency by <b>25%</b>, achieved <b>92%</b> user adoption in rollouts. :contentReference[oaicite:1]{index=1}
+        </div>
+      </aside>
     </section>
 
-    <section id="projects" class="section">
-      <h2>Featured Projects</h2>
-
-      <div class="grid">
-        <div class="card">
-          <div class="project-title">
-            <div>
-              <h3>Retail Supply Chain Decision Dashboard</h3>
-              <div class="muted">Decision support: revenue risk + inventory availability insights</div>
-            </div>
-            <div class="tag">Supply Chain</div>
-          </div>
-
-          <ul>
-            <li>Estimated revenue exposure from inventory shortages using pricing + availability signals</li>
-            <li>Brand/vendor contribution analysis to prioritize replenishment actions</li>
-            <li>Price vs risk view to highlight high-impact items</li>
-          </ul>
-
-          <div class="project-links">
-            <a class="chip" href="https://github.com/prashant100x/Retail-Supply-Chain-Decision-Dashboard" target="_blank" rel="noreferrer">View Repo</a>
-          </div>
-
-          <p class="muted" style="margin-top:12px;"
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="project-title">
-            <div>
-              <h3>Next Project Slot: Banking Analytics</h3>
-              <div class="muted">Behavior-based customer risk + decision rules</div>
-            </div>
-            <div class="tag" style="background:rgba(34,197,94,.14);border-color:rgba(34,197,94,.28);color:#c9f7d8;">Banking</div>
-          </div>
-          <ul>
-            <li>Customer segmentation (risk bands) + explainable KPIs</li>
-            <li>Simple approval / review / reject decision panel</li>
-            <li>Designed to match analyst interview questions</li>
-          </ul>
-          <div class="project-links">
-            <span class="chip" style="opacity:.7">Coming Soon</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <!-- SKILLS -->
     <section id="skills" class="section">
-      <h2>Skills</h2>
-      <div class="grid">
+      <div class="sectionHead">
+        <h2>Skills</h2>
+        <div class="muted">A Business Analyst toolkit built for clarity, speed, and action.</div>
+      </div>
+
+      <div class="grid3">
         <div class="card">
-          <h3>Analytics & Operations</h3>
+          <h3>Operations & Analytics</h3>
           <ul>
-            <li>Inventory Management, Data Integrity, Performance Analysis</li>
-            <li>Process Optimization, Cost Reduction, KPI Monitoring</li>
-            <li>Stakeholder Communication & Change Support</li>
+            <li>Inventory Management</li>
+            <li>Process Optimization</li>
+            <li>Performance Analysis</li>
+            <li>Data Integrity</li>
+            <li>Cost Reduction Strategies</li>
           </ul>
         </div>
+
         <div class="card">
-          <h3>Tools</h3>
+          <h3>Technical</h3>
           <ul>
-            <li>Power BI (DAX), Excel (Pivots, Lookups, Advanced formulas)</li>
-            <li>SQL (analysis, querying)</li>
-            <li>Tableau (basic), reporting & dashboarding</li>
+            <li>Advanced Excel (pivots, VLOOKUP, macros)</li>
+            <li>SQL</li>
+            <li>Power BI</li>
+            <li>Tableau</li>
+            <li>Inventory Management Systems</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Project & Communication</h3>
+          <ul>
+            <li>Change Management</li>
+            <li>Project Execution</li>
+            <li>Communication Playbooks</li>
+            <li>Cross-Functional Collaboration</li>
+            <li>Stakeholder Alignment</li>
           </ul>
         </div>
       </div>
+
+      <div class="badgeRow">
+        <span class="badge">Dashboard UX</span>
+        <span class="badge">KPI Monitoring</span>
+        <span class="badge">Data Audits</span>
+        <span class="badge">Process Rollouts</span>
+        <span class="badge">Stakeholder Updates</span>
+      </div>
     </section>
 
+    <!-- EXPERIENCE -->
     <section id="experience" class="section">
-      <h2>Experience Highlight</h2>
-      <div class="card">
-        <h3>Infinite IT Solution — Business Analyst (Sep 2022 – Jul 2024)</h3>
-        <ul>
-          <li>Inventory data audits and optimization initiatives; reduced discrepancies (as documented in resume)</li>
-          <li>Operational performance analysis using SQL + Excel; improved workflow efficiency</li>
-          <li>Built dashboards/tracking systems for real-time KPI monitoring</li>
-        </ul>
-        <p class="muted">Location: Nepal • Now based in Ottawa, Canada</p>
+      <div class="sectionHead">
+        <h2>Experience</h2>
+        <div class="muted">Timeline style (clean + recruiter-friendly).</div>
+      </div>
+
+      <div class="timeline">
+        <div class="tItem">
+          <div class="tDate">Sep 2022 – Jul 2024</div>
+          <div class="tCard">
+            <h3>Business Analyst • Infinite IT Solution (Nepal)</h3>
+            <ul>
+              <li>Reduced inventory discrepancies by <b>22%</b> through audits and optimization. :contentReference[oaicite:2]{index=2}</li>
+              <li>Improved workflow efficiency by <b>25%</b> using SQL + Excel analysis and process improvements. :contentReference[oaicite:3]{index=3}</li>
+              <li>Built KPI dashboards in Power BI/Excel for real-time monitoring. :contentReference[oaicite:4]{index=4}</li>
+              <li>Created rollout communication playbooks and achieved <b>92%</b> adoption. :contentReference[oaicite:5]{index=5}</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- CASE STUDIES -->
+    <section id="case-studies" class="section">
+      <div class="sectionHead">
+        <h2>Case Studies</h2>
+        <div class="muted">Problem → Approach → Result (BA style).</div>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <div class="tagRow">
+            <span class="tag">Power BI</span><span class="tag">Excel</span><span class="tag">Inventory</span>
+          </div>
+          <h3>Inventory Optimization Dashboard</h3>
+          <div class="muted" style="line-height:1.6">
+            Automated inventory tracking with cycle counts, variance reporting, and stock alerts — reduced manual processing time by <b>30%</b>. :contentReference[oaicite:6]{index=6}
+          </div>
+          <div class="cardActions">
+            <a class="btn small" href="#" target="_blank" rel="noreferrer">Screenshots</a>
+            <a class="btn small ghost" href="#" target="_blank" rel="noreferrer">Project Link</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="tagRow">
+            <span class="tag">SQL</span><span class="tag">Excel</span><span class="tag">Supply Chain</span>
+          </div>
+          <h3>Supply Chain Performance Analysis</h3>
+          <div class="muted" style="line-height:1.6">
+            Identified a <b>15%</b> cost reduction opportunity through supplier consolidation and optimized stocking programs. :contentReference[oaicite:7]{index=7}
+          </div>
+          <div class="cardActions">
+            <a class="btn small" href="#" target="_blank" rel="noreferrer">SQL Queries</a>
+            <a class="btn small ghost" href="#" target="_blank" rel="noreferrer">Case PDF</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="sectionHead">
+        <h2>Projects</h2>
+        <div class="muted">More work samples (add links later).</div>
+      </div>
+
+      <div class="projects">
+        <div class="pCard">
+          <div class="pMedia">🧩</div>
+          <div class="pBody">
+            <h3>Process Change Management Framework</h3>
+            <div class="muted">Communication playbook + execution strategy to support system implementation and adoption. :contentReference[oaicite:8]{index=8}</div>
+            <div class="pillRow">
+              <span class="pill">Change Mgmt</span><span class="pill">Playbooks</span><span class="pill">Rollouts</span>
+            </div>
+            <div class="cardActions">
+              <a class="btn small" href="#" target="_blank" rel="noreferrer">Docs</a>
+              <a class="btn small ghost" href="#" target="_blank" rel="noreferrer">Samples</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pCard">
+          <div class="pMedia">📈</div>
+          <div class="pBody">
+            <h3>Power BI KPI Dashboard Pack</h3>
+            <div class="muted">Reusable KPI pages: trends, variance, drill-down, and exception monitoring.</div>
+            <div class="pillRow">
+              <span class="pill">Power BI</span><span class="pill">DAX</span><span class="pill">Modeling</span>
+            </div>
+            <div class="cardActions">
+              <a class="btn small" href="#" target="_blank" rel="noreferrer">Demo</a>
+              <a class="btn small ghost" href="#" target="_blank" rel="noreferrer">Repo</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pCard">
+          <div class="pMedia">🧾</div>
+          <div class="pBody">
+            <h3>Excel Reporting Template</h3>
+            <div class="muted">Standardized weekly reporting with cleaner KPI definitions and faster refresh.</div>
+            <div class="pillRow">
+              <span class="pill">Excel</span><span class="pill">Pivots</span><span class="pill">Power Query</span>
+            </div>
+            <div class="cardActions">
+              <a class="btn small" href="#" target="_blank" rel="noreferrer">Download</a>
+              <a class="btn small ghost" href="#" target="_blank" rel="noreferrer">Screens</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
     <section id="contact" class="section">
-      <h2>Contact</h2>
-      <div class="card">
-        <p><b>Email:</b> <a href="mailto:prashant100x@gmail.com">prashant100x@gmail.com</a></p>
-        <p><b>Phone:</b> +1 (343) 558-0896</p>
-        <p><b>Location:</b> Ottawa, ON • Open to GTA relocation</p>
-        <p class="muted">Replace the LinkedIn button URL when you’re ready.</p>
+      <div class="sectionHead">
+        <h2>Contact</h2>
+        <div class="muted">Let’s connect for BA / reporting / analytics roles.</div>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <h3>Quick Info</h3>
+          <div class="infoRow">
+            <span class="muted">Email</span>
+            <a href="mailto:Prashant100x@gmail.com">Prashant100x@gmail.com</a>
+          </div>
+          <div class="infoRow">
+            <span class="muted">Phone</span>
+            <a href="tel:+13435580896">+1 343 558 0896</a>
+          </div>
+          <div class="infoRow">
+            <span class="muted">Location</span>
+            <span>Ottawa, ON</span>
+          </div>
+
+          <div class="cardActions">
+            <a class="btn" href="mailto:Prashant100x@gmail.com?subject=Portfolio%20Inquiry">Email Me</a>
+            <a class="btn ghost" href="https://www.linkedin.com/in/prashant-kumar-nidhi-3b38ab2b7/" target="_blank" rel="noreferrer">Message on LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Education</h3>
+          <ul>
+            <li>Post-Graduate Diploma in Business Analytics (2024–2026), St Paul University – Lambton College (GPA: 3.2/4.0). :contentReference[oaicite:9]{index=9}</li>
+            <li>BBA (Financial Markets) (2019–2022), LP University (GPA: 7.46/10). :contentReference[oaicite:10]{index=10}</li>
+          </ul>
+          <div class="callout">
+            <b>Resume button note:</b> Keep your PDF in the same folder as this HTML and name it exactly:
+            <b>Prashant Resume.pdf</b>.
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        © 2026 Prashant Kumar Nidhi • Built in pure HTML (single file)
       </div>
     </section>
-
-    <div class="footer">
-      <div>© <span id="y"></span> Prashant Kumar Nidhi</div>
-      <div>Built on <code>GitHub Pages</code></div>
-    </div>
-  </div>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+  </main>
 </body>
 </html>
