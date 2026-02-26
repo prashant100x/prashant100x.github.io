@@ -33,6 +33,7 @@
     }
     a{color:inherit}
     .container{width:min(1120px, calc(100% - 40px)); margin:0 auto; padding: 100px 0 60px;}
+
     .topbar{
       position:fixed; inset:0 0 auto 0; z-index:50;
       display:flex; align-items:center; justify-content:space-between;
@@ -58,6 +59,7 @@
     }
     .nav a:hover{background:var(--panel); color:var(--text)}
     .actions{display:flex; gap:10px; align-items:center;}
+
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding:10px 14px; border-radius:14px;
@@ -73,7 +75,6 @@
       background: transparent; color: var(--text);
       border:1px solid var(--border); box-shadow:none;
     }
-    .btn.small{padding:8px 12px; border-radius:12px; box-shadow:none}
 
     .hero{
       display:grid; grid-template-columns: 1.35fr .65fr; gap:22px;
@@ -114,6 +115,7 @@
       padding:18px;
     }
     .profileCard{position: sticky; top: 92px}
+
     .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top: 12px;}
     .chip{
       padding:8px 10px; border-radius:999px;
@@ -136,6 +138,7 @@
     .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
     .grid2{display:grid; grid-template-columns: repeat(2, 1fr); gap:14px}
     ul{margin:10px 0 0; padding-left: 18px; color: var(--muted); line-height:1.7}
+
     .badgeRow{display:flex; flex-wrap:wrap; gap:10px; margin-top: 14px}
     .badge{
       padding:8px 10px; border-radius:999px;
@@ -161,23 +164,6 @@
       background: transparent;
       font-weight:1000; font-size:12px; color:var(--muted)
     }
-    .cardActions{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
-
-    .projects{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
-    .pCard{border-radius: var(--radius); border:1px solid var(--border); background: var(--panel); overflow:hidden}
-    .pMedia{
-      height:110px; display:flex; align-items:center; justify-content:center;
-      font-size:34px;
-      background: linear-gradient(135deg, rgba(124,92,255,.16), rgba(255,255,255,.04));
-      border-bottom:1px solid var(--border);
-    }
-    .pBody{padding:16px}
-    .pillRow{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
-    .pill{
-      padding:6px 10px; border-radius:999px;
-      border:1px solid var(--border);
-      font-weight:1000; font-size:12px; color:var(--muted)
-    }
 
     .infoRow{display:flex; justify-content:space-between; gap:16px; padding:10px 0; border-bottom:1px solid var(--border)}
     .infoRow:last-child{border-bottom:none}
@@ -194,7 +180,7 @@
       .hero{grid-template-columns: 1fr}
       .profileCard{position:relative; top:auto}
       .kpis{grid-template-columns:1fr}
-      .grid3,.grid2,.projects{grid-template-columns:1fr}
+      .grid3,.grid2{grid-template-columns:1fr}
       .tItem{grid-template-columns:1fr}
       h1{font-size:36px}
     }
@@ -202,7 +188,6 @@
 </head>
 
 <body>
-  <!-- Top bar -->
   <header class="topbar">
     <a class="brand" href="#top">
       <span class="brandMark"></span>
@@ -218,19 +203,12 @@
     </nav>
 
     <div class="actions">
-      <!-- ✅ Your LinkedIn (added) -->
       <a class="btn ghost" href="https://www.linkedin.com/in/prashant-kumar-nidhi-3b38ab2b7/" target="_blank" rel="noreferrer">LinkedIn</a>
-
-      <!-- ✅ Optional GitHub (put your link when ready) -->
-      <a class="btn ghost" href="#" target="_blank" rel="noreferrer">GitHub</a>
-
-      <!-- ✅ Resume: keep this file in same folder as index.html -->
       <a class="btn" href="Prashant Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
     </div>
   </header>
 
   <main id="top" class="container">
-    <!-- HERO -->
     <section class="hero">
       <div>
         <span class="eyebrow">Business Analyst • Dashboards • Insights</span>
@@ -239,233 +217,228 @@
           I transform data into decisions.
         </h1>
         <p class="subhead">
-          Results-driven Business Operations Analyst with expertise in inventory management, data integrity, and process optimization.
-          Skilled in analyzing performance data to drive operational excellence, cost savings, and profitability. :contentReference[oaicite:0]{index=0}
+          Business Analytics post-grad student in Ottawa with strong skills in <b>Excel</b>, <b>Power BI</b>, and <b>SQL</b>.
+          I focus on KPI clarity, clean reporting, and stakeholder-ready insights.
         </p>
 
         <div class="kpis">
           <div class="kpi">
             <div class="kpiNum">KPI Dashboards</div>
-            <div class="kpiLabel">Power BI + Excel tracking • Real-time monitoring</div>
+            <div class="kpiLabel">Power BI dashboards built for decision-makers</div>
           </div>
           <div class="kpi">
             <div class="kpiNum">SQL Analysis</div>
-            <div class="kpiLabel">Operational insights • inefficiencies • cost saving</div>
+            <div class="kpiLabel">Queries for insights, trends, and performance drivers</div>
           </div>
           <div class="kpi">
-            <div class="kpiNum">Process Optimization</div>
-            <div class="kpiLabel">Change management • playbooks • adoption</div>
+            <div class="kpiNum">Excel Reporting</div>
+            <div class="kpiLabel">Power Query + pivots to automate recurring reports</div>
           </div>
         </div>
 
         <div class="heroCtas">
-          <a class="btn" href="#case-studies">View Case Studies</a>
-          <a class="btn ghost" href="#contact">Let’s Connect</a>
+          <a class="btn ghost" href="#contact">Contact</a>
         </div>
 
         <div class="mini">
-          <span>Ottawa, Canada</span> <span class="dot"></span>
+          <span>Ottawa, ON</span> <span class="dot"></span>
           <a href="mailto:Prashant100x@gmail.com">Prashant100x@gmail.com</a> <span class="dot"></span>
           <a href="tel:+13435580896">+1 343 558 0896</a>
         </div>
       </div>
 
-      <!-- ✅ DP picture removed (no image) -->
       <aside class="card profileCard">
-        <div>
-          <h3 style="margin:0 0 6px">Business Analyst</h3>
-          <div class="muted" style="line-height:1.6">
-            Inventory & operations analytics • KPI dashboards • Data integrity • Stakeholder communication
-          </div>
+        <h3 style="margin:0 0 6px">Business Analyst</h3>
+        <div class="muted" style="line-height:1.6">
+          Stakeholder communication • Requirements • KPI reporting • Dashboard design
         </div>
 
         <div class="chips">
           <span class="chip">Power BI</span>
-          <span class="chip">Excel (Advanced)</span>
+          <span class="chip">Excel</span>
           <span class="chip">SQL</span>
-          <span class="chip">Tableau</span>
-          <span class="chip">Process Optimization</span>
-          <span class="chip">Change Management</span>
+          <span class="chip">Power Query</span>
+          <span class="chip">Process Mapping</span>
+          <span class="chip">Agile</span>
         </div>
 
         <div class="callout">
-          <b>Highlights:</b> reduced inventory discrepancies by <b>22%</b>, improved workflow efficiency by <b>25%</b>, achieved <b>92%</b> user adoption in rollouts. :contentReference[oaicite:1]{index=1}
+          <b>Open to:</b> Business Analyst / Junior BA / Reporting Analyst roles (Ottawa / GTA)
         </div>
       </aside>
     </section>
 
-    <!-- SKILLS -->
     <section id="skills" class="section">
       <div class="sectionHead">
         <h2>Skills</h2>
-        <div class="muted">A Business Analyst toolkit built for clarity, speed, and action.</div>
+        <div class="muted">A toolkit built for analysis, reporting, and stakeholder clarity.</div>
       </div>
 
       <div class="grid3">
         <div class="card">
-          <h3>Operations & Analytics</h3>
+          <h3>Analytics</h3>
           <ul>
-            <li>Inventory Management</li>
-            <li>Process Optimization</li>
-            <li>Performance Analysis</li>
-            <li>Data Integrity</li>
-            <li>Cost Reduction Strategies</li>
+            <li>KPI definition & tracking</li>
+            <li>Trend and variance analysis</li>
+            <li>Data cleaning & validation</li>
+            <li>Insight writing (what / why / action)</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>Technical</h3>
+          <h3>Tools</h3>
           <ul>
-            <li>Advanced Excel (pivots, VLOOKUP, macros)</li>
-            <li>SQL</li>
-            <li>Power BI</li>
-            <li>Tableau</li>
-            <li>Inventory Management Systems</li>
+            <li>Power BI (modeling, DAX basics)</li>
+            <li>Excel (Power Query, pivots, dashboards)</li>
+            <li>SQL (joins, CTEs, windows basics)</li>
+            <li>PowerPoint (stakeholder decks)</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>Project & Communication</h3>
+          <h3>Business</h3>
           <ul>
-            <li>Change Management</li>
-            <li>Project Execution</li>
-            <li>Communication Playbooks</li>
-            <li>Cross-Functional Collaboration</li>
-            <li>Stakeholder Alignment</li>
+            <li>Requirements & user stories</li>
+            <li>Process mapping (AS-IS / TO-BE)</li>
+            <li>Stakeholder communication</li>
+            <li>Agile collaboration</li>
           </ul>
         </div>
       </div>
 
       <div class="badgeRow">
         <span class="badge">Dashboard UX</span>
-        <span class="badge">KPI Monitoring</span>
-        <span class="badge">Data Audits</span>
-        <span class="badge">Process Rollouts</span>
-        <span class="badge">Stakeholder Updates</span>
+        <span class="badge">Data Quality</span>
+        <span class="badge">Reporting Automation</span>
+        <span class="badge">Documentation</span>
+        <span class="badge">Storytelling</span>
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
     <section id="experience" class="section">
       <div class="sectionHead">
         <h2>Experience</h2>
-        <div class="muted">Timeline style (clean + recruiter-friendly).</div>
+        <div class="muted">A simple timeline recruiters can scan fast.</div>
       </div>
 
       <div class="timeline">
         <div class="tItem">
-          <div class="tDate">Sep 2022 – Jul 2024</div>
+          <div class="tDate">2024 – Present</div>
           <div class="tCard">
-            <h3>Business Analyst • Infinite IT Solution (Nepal)</h3>
+            <h3>Post-Graduate • Business Analytics</h3>
+            <div class="muted">Lambton College – Saint Paul University (Ottawa)</div>
             <ul>
-              <li>Reduced inventory discrepancies by <b>22%</b> through audits and optimization. :contentReference[oaicite:2]{index=2}</li>
-              <li>Improved workflow efficiency by <b>25%</b> using SQL + Excel analysis and process improvements. :contentReference[oaicite:3]{index=3}</li>
-              <li>Built KPI dashboards in Power BI/Excel for real-time monitoring. :contentReference[oaicite:4]{index=4}</li>
-              <li>Created rollout communication playbooks and achieved <b>92%</b> adoption. :contentReference[oaicite:5]{index=5}</li>
+              <li>Built dashboards and reports using Power BI, SQL, and Excel</li>
+              <li>Worked on business process and information systems topics</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tItem">
+          <div class="tDate">2022 – 2024</div>
+          <div class="tCard">
+            <h3>Marketing / Reporting Experience</h3>
+            <div class="muted">Nepal + India</div>
+            <ul>
+              <li>Tracked performance, created reports, and supported decision-making</li>
+              <li>Communicated outcomes to stakeholders in a clear, structured way</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tItem">
+          <div class="tDate">2024</div>
+          <div class="tCard">
+            <h3>Line Cook (Part-time)</h3>
+            <div class="muted">Ottawa</div>
+            <ul>
+              <li>Worked in a fast-paced environment with quality and time standards</li>
+              <li>Improved consistency by following standardized steps</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CASE STUDIES -->
     <section id="case-studies" class="section">
       <div class="sectionHead">
         <h2>Case Studies</h2>
-        <div class="muted">Problem → Approach → Result (BA style).</div>
+        <div class="muted">Business-style stories: problem → approach → outcome.</div>
       </div>
 
       <div class="grid2">
         <div class="card">
           <div class="tagRow">
-            <span class="tag">Power BI</span><span class="tag">Excel</span><span class="tag">Inventory</span>
+            <span class="tag">Power BI</span><span class="tag">KPIs</span>
           </div>
-          <h3>Inventory Optimization Dashboard</h3>
+          <h3>Retail KPI Dashboard (Sample)</h3>
           <div class="muted" style="line-height:1.6">
-            Automated inventory tracking with cycle counts, variance reporting, and stock alerts — reduced manual processing time by <b>30%</b>. :contentReference[oaicite:6]{index=6}
+            Built an executive dashboard to track revenue, margin, and category performance with drill-down views.
           </div>
-          <div class="cardActions">
-            <a class="btn small" href="#" target="_blank" rel="noreferrer">Screenshots</a>
-            <a class="btn small ghost" href="#" target="_blank" rel="noreferrer">Project Link</a>
-          </div>
+          <ul>
+            <li><b>Problem:</b> reporting was manual and inconsistent</li>
+            <li><b>Approach:</b> cleaned data, modeled it, and created KPI measures</li>
+            <li><b>Outcome:</b> faster reporting and clearer performance drivers</li>
+          </ul>
         </div>
 
         <div class="card">
           <div class="tagRow">
-            <span class="tag">SQL</span><span class="tag">Excel</span><span class="tag">Supply Chain</span>
+            <span class="tag">SQL</span><span class="tag">Insights</span>
           </div>
-          <h3>Supply Chain Performance Analysis</h3>
+          <h3>Delay Pattern Analysis (Sample)</h3>
           <div class="muted" style="line-height:1.6">
-            Identified a <b>15%</b> cost reduction opportunity through supplier consolidation and optimized stocking programs. :contentReference[oaicite:7]{index=7}
+            Used SQL to identify delay drivers by route/time and summarized recommendations in a short insight memo.
           </div>
-          <div class="cardActions">
-            <a class="btn small" href="#" target="_blank" rel="noreferrer">SQL Queries</a>
-            <a class="btn small ghost" href="#" target="_blank" rel="noreferrer">Case PDF</a>
-          </div>
+          <ul>
+            <li><b>Problem:</b> delays were discussed without evidence-based prioritization</li>
+            <li><b>Approach:</b> CTEs + ranking for top contributors</li>
+            <li><b>Outcome:</b> clear “what to fix first” insights</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
     <section id="projects" class="section">
       <div class="sectionHead">
         <h2>Projects</h2>
-        <div class="muted">More work samples (add links later).</div>
+        <div class="muted">Short list — only what matters.</div>
       </div>
 
-      <div class="projects">
-        <div class="pCard">
-          <div class="pMedia">🧩</div>
-          <div class="pBody">
-            <h3>Process Change Management Framework</h3>
-            <div class="muted">Communication playbook + execution strategy to support system implementation and adoption. :contentReference[oaicite:8]{index=8}</div>
-            <div class="pillRow">
-              <span class="pill">Change Mgmt</span><span class="pill">Playbooks</span><span class="pill">Rollouts</span>
-            </div>
-            <div class="cardActions">
-              <a class="btn small" href="#" target="_blank" rel="noreferrer">Docs</a>
-              <a class="btn small ghost" href="#" target="_blank" rel="noreferrer">Samples</a>
-            </div>
-          </div>
+      <div class="grid3">
+        <div class="card">
+          <h3>Stock Market Analysis (K-Means)</h3>
+          <div class="muted">Clustered stocks by performance patterns to compare groups and trends.</div>
+          <ul>
+            <li>Python + pandas (basics)</li>
+            <li>Clear reporting and visuals</li>
+          </ul>
         </div>
 
-        <div class="pCard">
-          <div class="pMedia">📈</div>
-          <div class="pBody">
-            <h3>Power BI KPI Dashboard Pack</h3>
-            <div class="muted">Reusable KPI pages: trends, variance, drill-down, and exception monitoring.</div>
-            <div class="pillRow">
-              <span class="pill">Power BI</span><span class="pill">DAX</span><span class="pill">Modeling</span>
-            </div>
-            <div class="cardActions">
-              <a class="btn small" href="#" target="_blank" rel="noreferrer">Demo</a>
-              <a class="btn small ghost" href="#" target="_blank" rel="noreferrer">Repo</a>
-            </div>
-          </div>
+        <div class="card">
+          <h3>Excel Reporting Template</h3>
+          <div class="muted">Reusable KPI template using pivots and clean structure for automation.</div>
+          <ul>
+            <li>Power Query-ready layout</li>
+            <li>Weekly/monthly reporting format</li>
+          </ul>
         </div>
 
-        <div class="pCard">
-          <div class="pMedia">🧾</div>
-          <div class="pBody">
-            <h3>Excel Reporting Template</h3>
-            <div class="muted">Standardized weekly reporting with cleaner KPI definitions and faster refresh.</div>
-            <div class="pillRow">
-              <span class="pill">Excel</span><span class="pill">Pivots</span><span class="pill">Power Query</span>
-            </div>
-            <div class="cardActions">
-              <a class="btn small" href="#" target="_blank" rel="noreferrer">Download</a>
-              <a class="btn small ghost" href="#" target="_blank" rel="noreferrer">Screens</a>
-            </div>
-          </div>
+        <div class="card">
+          <h3>Requirements + Process Pack</h3>
+          <div class="muted">AS-IS/TO-BE process + user stories + acceptance criteria.</div>
+          <ul>
+            <li>Stakeholder-friendly documentation</li>
+            <li>Agile-ready story format</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="section">
       <div class="sectionHead">
         <h2>Contact</h2>
-        <div class="muted">Let’s connect for BA / reporting / analytics roles.</div>
+        <div class="muted">Let’s connect for Business Analyst / Reporting Analyst opportunities.</div>
       </div>
 
       <div class="grid2">
@@ -473,38 +446,34 @@
           <h3>Quick Info</h3>
           <div class="infoRow">
             <span class="muted">Email</span>
-            <a href="mailto:Prashant100x@gmail.com">Prashant100x@gmail.com</a>
+            <a href="mailto:prashant100x@gmail.com">prashant100x@gmail.com</a>
           </div>
           <div class="infoRow">
             <span class="muted">Phone</span>
             <a href="tel:+13435580896">+1 343 558 0896</a>
           </div>
           <div class="infoRow">
-            <span class="muted">Location</span>
-            <span>Ottawa, ON</span>
-          </div>
-
-          <div class="cardActions">
-            <a class="btn" href="mailto:Prashant100x@gmail.com?subject=Portfolio%20Inquiry">Email Me</a>
-            <a class="btn ghost" href="https://www.linkedin.com/in/prashant-kumar-nidhi-3b38ab2b7/" target="_blank" rel="noreferrer">Message on LinkedIn</a>
+            <span class="muted">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/prashant-kumar-nidhi-3b38ab2b7/" target="_blank" rel="noreferrer">prashant-kumar-nidhi</a>
           </div>
         </div>
 
         <div class="card">
-          <h3>Education</h3>
+          <h3>Preferred Roles</h3>
           <ul>
-            <li>Post-Graduate Diploma in Business Analytics (2024–2026), St Paul University – Lambton College (GPA: 3.2/4.0). :contentReference[oaicite:9]{index=9}</li>
-            <li>BBA (Financial Markets) (2019–2022), LP University (GPA: 7.46/10). :contentReference[oaicite:10]{index=10}</li>
+            <li>Business Analyst / Junior BA</li>
+            <li>Reporting Analyst</li>
+            <li>BI / Dashboard-focused roles (Power BI)</li>
+            <li>Data & process improvement projects</li>
           </ul>
           <div class="callout">
-            <b>Resume button note:</b> Keep your PDF in the same folder as this HTML and name it exactly:
-            <b>Prashant Resume.pdf</b>.
+            <b>Fast check:</b> Resume button opens <b>Prashant Resume.pdf</b> (same folder as this HTML).
           </div>
         </div>
       </div>
 
       <div class="footer">
-        © 2026 Prashant Kumar Nidhi • Built in pure HTML (single file)
+        © 2026 Prashant Kumar Nidhi • Single-file HTML portfolio
       </div>
     </section>
   </main>
